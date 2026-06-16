@@ -1,0 +1,37 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/.pytest_cache/
+
+# Environment Files
+backend/.env
+frontend/.env
+
+# Node
+frontend/node_modules/
+
+# Vite
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+htmlcov/
+
+# Alembic Cache
+backend/alembic/__pycache__/
+
+# Build
+build/
+dist/
