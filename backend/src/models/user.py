@@ -6,16 +6,16 @@ from typing import TYPE_CHECKING, List, Optional
 from sqlalchemy import Boolean, Index, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, SoftDeleteMixin, TimestampMixin, UUIDMixin
+from src.db.base import Base, SoftDeleteMixin, TimestampMixin, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.auth_provider import AuthProvider
-    from app.models.session import Session
-    from app.models.emotion_session import EmotionSession
-    from app.models.playlist import Playlist
-    from app.models.user_preferences import UserPreferences
-    from app.models.user_music_interaction import UserMusicInteraction
-    from app.models.audit_log import AuditLog
+    from src.models.auth_provider import AuthProvider
+    from src.models.session import Session
+    from src.models.emotion_session import EmotionSession
+    from src.models.playlist import Playlist
+    from src.models.user_preferences import UserPreferences
+    from src.models.user_music_interaction import UserMusicInteraction
+    from src.models.audit_log import AuditLog
 
 
 class User(Base, UUIDMixin, TimestampMixin, SoftDeleteMixin):

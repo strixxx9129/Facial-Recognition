@@ -10,12 +10,12 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, TimestampMixin, UUIDMixin
+from src.db.base import Base, TimestampMixin, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.user import User
-    from app.models.emotion_snapshot import EmotionSnapshot
-    from app.models.recommendation import Recommendation
+    from src.models.user import User
+    from src.models.emotion_snapshot import EmotionSnapshot
+    from src.models.recommendation import Recommendation
 
 
 class EmotionSession(Base, UUIDMixin, TimestampMixin):

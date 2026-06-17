@@ -7,11 +7,11 @@ from sqlalchemy import CheckConstraint, DateTime, ForeignKey, Index, Integer, St
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, UUIDMixin
+from src.db.base import Base, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.user import User
-    from app.models.track import Track
+    from src.models.user import User
+    from src.models.track import Track
 
 
 class UserMusicInteraction(Base, UUIDMixin):

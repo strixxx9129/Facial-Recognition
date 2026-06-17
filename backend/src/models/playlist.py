@@ -10,11 +10,11 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, SoftDeleteMixin, TimestampMixin, UUIDMixin
+from src.db.base import Base, SoftDeleteMixin, TimestampMixin, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.user import User
-    from app.models.track import Track
+    from src.models.user import User
+    from src.models.track import Track
 
 
 class Playlist(Base, UUIDMixin, TimestampMixin, SoftDeleteMixin):

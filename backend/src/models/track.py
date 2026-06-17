@@ -8,12 +8,12 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, TimestampMixin, UUIDMixin
+from src.db.base import Base, TimestampMixin, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.recommendation import RecommendationTrack
-    from app.models.playlist import PlaylistTrack
-    from app.models.user_music_interaction import UserMusicInteraction
+    from src.models.recommendation import RecommendationTrack
+    from src.models.playlist import PlaylistTrack
+    from src.models.user_music_interaction import UserMusicInteraction
 
 
 class Track(Base, UUIDMixin, TimestampMixin):
@@ -49,6 +49,31 @@ class Track(Base, UUIDMixin, TimestampMixin):
     # Computed mood classification tags (e.g. ['melancholic', 'rainy_day'])
     mood_tags: Mapped[Optional[list]] = mapped_column(
         ARRAY(String(64)), nullable=True
+    )
+    
+    youtube_url: Mapped[Optional[str]] = mapped_column(
+        String(2048),
+        nullable=True,
+    )
+
+    thumbnail_url: Mapped[Optional[str]] = mapped_column(
+        String(2048),
+        nullable=True,
+    )
+
+    channel_name: Mapped[Optional[str]] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    release_year: Mapped[Optional[int]] = mapped_column(
+        Integer,
+        nullable=True,
+    )
+
+    language: Mapped[Optional[str]] = mapped_column(
+        String(50),
+        nullable=True,
     )
 
     # ── Relationships ────────────────────────────────────────────────────────

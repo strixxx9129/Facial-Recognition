@@ -10,12 +10,12 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, TimestampMixin, UUIDMixin
+from src.db.base import Base, TimestampMixin, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.emotion_session import EmotionSession
-    from app.models.user import User
-    from app.models.track import Track
+    from src.models.emotion_session import EmotionSession
+    from src.models.user import User
+    from src.models.track import Track
 
 
 class Recommendation(Base, UUIDMixin, TimestampMixin):

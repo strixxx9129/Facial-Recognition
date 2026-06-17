@@ -7,10 +7,10 @@ from sqlalchemy import CheckConstraint, DateTime, Float, ForeignKey, Index, Inte
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, TimestampMixin, UUIDMixin
+from src.db.base import Base, TimestampMixin, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.emotion_session import EmotionSession
+    from src.models.emotion_session import EmotionSession
 
 
 class EmotionSnapshot(Base, UUIDMixin, TimestampMixin):

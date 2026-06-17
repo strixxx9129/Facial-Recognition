@@ -7,10 +7,10 @@ from sqlalchemy import DateTime, ForeignKey, Index, String, func
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, UUIDMixin
+from src.db.base import Base, UUIDMixin
 
 if TYPE_CHECKING:
-    from app.models.user import User
+    from src.models.user import User
 
 
 class AuditLog(Base, UUIDMixin):
